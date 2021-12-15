@@ -36,7 +36,7 @@ contract Vesting is Context, Ownable {
     require(_daysBeforeStart > 0, 'days before start cannot be 0');
     require(_daysToLast > 0, 'days to last cannot be 0');
     _start = block.timestamp + (_daysBeforeStart * 1 days);
-    _end = block.timestamp + (_daysToLast * 1 days);
+    _end = _start + (_daysToLast * 1 days);
     emit Started(block.timestamp);
     return true;
   }
