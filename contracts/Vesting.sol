@@ -23,7 +23,7 @@ contract Vesting is Context, Ownable {
 
   constructor(address token_, uint256 daysOfLock_) {
     _token = IERC20(token_);
-    _daysOfLock = daysOfLock_;
+    _daysOfLock = (daysOfLock_ * 1 days);
   }
 
   /** @dev Start vesting countdown
